@@ -1,11 +1,9 @@
 import requestUtils
-import json
-from collections import Counter
 
 coinbaseMainDomain = "api.coinbase.com"
 coinbaseExchangeDomain = "api.exchange.coinbase.com"
 
-# this only gets the product ids that are ending with USD.
+# this only gets the product ids that are ending with 'USD'.
 def getProductsIDs():
     res = requestUtils.makeRequest('GET', coinbaseMainDomain, '/api/v3/brokerage/products')
     if res.status_code != 200: return []
